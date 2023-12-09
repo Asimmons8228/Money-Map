@@ -1,0 +1,34 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Expense Report</h1>
+<div class="card">
+    <div class="card-content">
+        <span class="card-title">Summary</span>
+        <p>Total Monthly Expenses: ${{ total_expenses }}</p>
+        <p>Estimated Yearly Expenses: ${{ yearly_estimated_expenses }}</p>
+    </div>
+    <div class="card-action">
+        <a href="{% url 'expenses_create' %}" class="btn">Add an Expense</a>
+    </div>
+</div>
+<br />
+<hr />
+<br />
+
+{% for expense in expenses %}
+<div class="card">
+    <div class="card-content">
+        <span class="card-title">{{ expense.name }}</span>
+        <p>Category: {{ expense.category }}</p>
+        <p>Date: {{ expense.date }}</p>
+        <p>Amount: ${{ expense.amount }}</p>
+    </div>
+    <div class="card-action">
+        <form action="{% url 'expenses_delete' expense.id %}" method="POST">
+            {% csrf_token %}
+            <a href="{% url 'expenses_update' expense.id %}" class="btn">Edit</a>
+            <input type="submit" value="Delete" class="btn" />
+        </form>
+    </div>
+</div>
+{% endfor %} {% endblock %}
