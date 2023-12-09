@@ -1,13 +1,19 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>Sign Up</h1>
+<h1 style="text-align: center;">Sign Up</h1>
 
 <p class="red-text">{{ error_message }}</p>
 
+<div class="form-container">
 <form method="POST" action="{% url 'signup' %}">
+    <div class="form-text">
     {% csrf_token %} {{ form.as_p }}
-    <input type="submit" class="btn" value="Sign Up" />
+    </div>
+    <div style="text-align: center;">
+    <input type="submit" class="btn" value="Submit" />
+    </div>
 </form>
+</div>
 
 <br />
 
