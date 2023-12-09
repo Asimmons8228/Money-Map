@@ -108,3 +108,34 @@ class ExpenseUpdate(LoginRequiredMixin, UpdateView):
 class ExpenseDelete(LoginRequiredMixin, DeleteView):
     model=Expense
     success_url = '/expenses'
+
+class BillCreate(LoginRequiredMixin, CreateView):
+    model = Bill
+    success_url = '/bills/create'
+
+    class BillCreateForm(forms.ModelForm):
+        BILLS = (
+            ('Essential', 'Essential'),
+            ('Nonessential', 'Nonessential'),
+        )
+
+        category = forms.ChoiceField(choices=BILLS)
+
+        class Meta:
+            model = Bill
+            fields = ['name', 'category', 'amount']
+
+    form_class = BillCreateForm
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
+class BillUpdate(LoginRequiredMixin, UpdateView):
+    model = Bill
+    fields = ['name', 'category', 'amount']
+    success_url = '/bills'
+
+class BillDelete(LoginRequiredMixin, DeleteView):
+    model = Bill
+    success_url = '/bills'
