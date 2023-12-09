@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Financial Health Calculator</h1>
+<p>
+    Welcome to our Financial Health Calculator! With our tool, you can take
+    control of your finances easily. Simply input your yearly income, monthly
+    bills, and other expenses, and our intuitive calculator will analyze your
+    spending habits to provide personalized recommendations. This will empower you
+    to make informed financial decisions, whether you're planning for the future,
+    aiming to save more, or seeking to optimize your expenses. Our calculator is
+    here to assist you on your journey toward financial well-being. Start
+    exploring now and pave the way for a healthier financial future!
+</p>
+<a href="{% url 'income_create' %}" class="btn">Begin</a>
+{% endblock %}
