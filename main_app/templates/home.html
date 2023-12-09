@@ -1,0 +1,66 @@
+<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+</section>
+<div id="home-button-container">
+    <div id="home-buttons"><a href="{% url 'signup' %}">Sign Up</a></div>
+    <div id="home-buttons">Guest User</div>
+</div>
+<div class="home-container">
+    <div class="row">
+        <div id="text-box" class="col s12 m6">
+            <h4>Our Story</h4>
+            <p class="home-text"><span style="font-size: 24px;">MoneyMap began with a simple yet profound idea: empower
+                    individuals on their unique financial journeys. Our founders
+                    envisioned a platform that transcends traditional financial tools, offering not just solutions, but
+                    a companion for
+                    every step of your financial adventure.</span></p>
+            <p class="home-text"><span style="font-size: 24px;">Driven by a commitment to inclusivity and financial
+                    well-being, MoneyMap is more than an app; it's a trusted guide. We
+                    understand that everyone's path to financial success is different. That's why we've crafted a
+                    powerful and intuitive
+                    platform designed to cater to your individual needs.</span></p>
+        </div>
+
+        <div id="img-box" class="col s12 m6">
+            <img src="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Image" class="row-img" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div id="img-box" class="col s12 m6 order-s2">
+            <img src="https://images.unsplash.com/photo-1499914485622-a88fac536970?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Image" class="row-img" />
+        </div>
+        <div id="text-box" class="col s12 m6 order-s1">
+            <h4>Our Mission</h4>
+            <p class="home-text"><span style="font-size: 24px;">At MoneyMap, we go beyond comprehension to empower users
+                    in navigating their financial journeys. In today's dynamic
+                    economic landscape, our mission is to provide individuals of all economic levels with the tools,
+                    insights, and support
+                    needed to master their personal finances. We foster a financial ecosystem that transcends
+                    boundaries, promoting
+                    inclusivity and resilience. MoneyMap is not just a platform; it's your companion on the path to
+                    financial well-being,
+                    offering guidance, resources, and a collaborative community for your financial thrive.</span></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div id="text-box" class="col s12 m6">
+            <a href="{% url 'fincalc_index' %}">
+                <h4>Financial Health Calculator</h4>
+            </a>
+            <p><span style="font-size: 24px;">MoneyMap provides intuitive tools for budgeting, expense tracking, and
+                    saving, all in one place. Take control of your
+                    finances with a customizable budgeting system that adapts to your unique lifestyle. Our app analyzes
+                    your spending
+                    patterns, offering tailored suggestions to optimize your financial health.</span></p>
+        </div>
+
+        <div id="img-box" class="col s12 m6">
+            <img src="https://images.unsplash.com/photo-1565372519925-842b7778defb?q=80&w=2971&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Image" class="row-img" />
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,165 @@
+@font-face {
+    font-family: 'BankGothic';
+    src: url('../Bank-Gothic-Font/BankGothicMediumBT.ttf') format('truetype'),
+        url('../Bank-Gothic-Font/BankGothic\ Md\ BT.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+h4 {
+    color: rgba(220, 187, 87, 0.75);
+    text-decoration: underline;
+    text-emphasis: bold;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+footer.page-footer {
+    padding-top: 0;
+    text-align: right;
+    background-color: #018060;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+a:hover {
+    color: #dcbb57;
+}
+
+.btn {
+    background-color: #018060;
+}
+
+.btn:hover {
+    color: #dcbb57;
+    background-color: #317058;
+}
+
+.moneymap-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+#home-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+#home-buttons a {
+    color: black;
+}
+
+#home-buttons {
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 12px;
+    padding: 10px;
+    background-color: rgb(45, 157, 76);
+    font-size: x-large;
+    font-family: 'BankGothic', sans-serif;
+}
+
+#home-buttons a:hover {
+    color: #dcbb57;
+}
+
+.nav-wrapper {
+    background-color: rgb(45, 157, 76);
+    border-bottom: 2px solid #dcbb57;
+}
+
+#hero {
+    width: 100vw;
+    height: 81vh;
+    background: url("../images/hero-image.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.row-img {
+    width: 100%;
+    height: auto;
+}
+
+img {
+    border-radius: 12px;
+}
+
+.table-container {
+    margin-left: 0px;
+}
+
+div.col.s8.table-col {
+    padding: 0px;
+}
+
+.homepage-body {
+    background: linear-gradient(rgba(220, 187, 87, 0.75), rgba(9, 139, 84, 0.75));
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.home-container {
+    border-top: 4px solid #dcbb57;
+    padding-top: 15px;
+    width: 100%;
+    font-family: 'BankGothic', sans-serif;
+    font-size: large;
+}
+
+.homepage-header h1 {
+    font-size: 5vw;
+    /* color: #dcbb57; */
+    text-transform: uppercase;
+}
+
+.homepage-header span {
+    color: #018060;
+}
+
+.homepage-body p {
+    font-size: 20px;
+    padding-right: 10vw;
+}
+
+.homepage-content {
+    margin-top: 10vw;
+}
+
+#text-box {
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+#img-box {
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.home-text {
+    padding-top: 10px;
+    font-size: x-large;
+
+}
