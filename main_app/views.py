@@ -9,4 +9,39 @@ from .finhealth import get_finhealth
 from .models import Bill, User, Income, Expense, FinancialHealth, Location
 from .forms import UserForm, Profile
 
+def home(request):
+  return render(request, 'home.html')
 
+def about(request):
+  return render(request, 'about.html')
+
+@login_required
+def fincalc_index(request):
+  return render(request, 'fincalc/index.html')
+
+@login_required
+def finhealth_index(request):
+  context = get_finhealth(request.user)
+  return render(request, 'finhealth/index.html', context)
+
+@login_required
+def bills_index(request):
+  bills= Bill.objects.filter(user=request.user)
+  monthly_bills = sum(bill.amount for bill in bills)
+  yearly_bills = monthly_bills * 12
+  return render(request, 'bills/index.html', {'bills': bills, 'monthly_bills': monthly_bills, 'yearly_bills': yearly_bills})
+
+@login_required
+def income_index(request):
+  income= Income.objects.filter(user=request.user)
+  yearly_income= sum(income.amount for income in income)
+  monthly_income= yearly_income / 12
+  rounded_monthly_income = round(monthly_income, 2)
+  return render(request, 'income/index.html', {'income': income, 'yearly_income': yearly_income, 'monthly_income': monthly_income, 'rounded_monthly_income': rounded_monthly_income})
+
+@login_required
+def expenses_index(request):
+  expenses= Expense.objects.filter(user=request.user)
+  total_expenses = sum(expense.amount for expense in expenses)
+  yearly_estimated_expenses = total_expenses * 12
+  return render(request, 'expenses/index.html', {'expenses': expenses, 'total_expenses': total_expenses, 'yearly_estimated_expenses': yearly_estimated_expenses})
