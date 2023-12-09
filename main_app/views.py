@@ -45,3 +45,35 @@ def expenses_index(request):
   total_expenses = sum(expense.amount for expense in expenses)
   yearly_estimated_expenses = total_expenses * 12
   return render(request, 'expenses/index.html', {'expenses': expenses, 'total_expenses': total_expenses, 'yearly_estimated_expenses': yearly_estimated_expenses})
+
+class IncomeCreate(LoginRequiredMixin, CreateView):
+    model = Income
+    success_url = '/income/create'
+    
+    class IncomeCreateForm(forms.ModelForm):
+        INCOMES = (
+            ('Earned', 'Earned'),
+            ('Passive', 'Passive'),
+            ('Portfolio', 'Portfolio'),
+        )
+
+        category = forms.ChoiceField(choices=INCOMES)
+
+        class Meta:
+            model = Income
+            fields = ['name', 'category', 'amount']
+
+    form_class = IncomeCreateForm
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
+class IncomeUpdate(LoginRequiredMixin, UpdateView):
+    model = Income
+    fields = ['name', 'category', 'amount']
+    success_url = '/income'
+
+class IncomeDelete(LoginRequiredMixin, DeleteView):
+    model = Income
+    success_url = '/income'
