@@ -52,7 +52,7 @@ class IncomeCreate(LoginRequiredMixin, CreateView):
     
     class IncomeCreateForm(forms.ModelForm):
         INCOMES = (
-            ('Earned', 'Earned'),
+            ('Salary', 'Salary'),
             ('Passive', 'Passive'),
             ('Portfolio', 'Portfolio'),
         )
@@ -61,7 +61,7 @@ class IncomeCreate(LoginRequiredMixin, CreateView):
 
         class Meta:
             model = Income
-            fields = ['name', 'category', 'amount']
+            fields = [ 'category', 'amount']
 
     form_class = IncomeCreateForm
 
@@ -71,7 +71,7 @@ class IncomeCreate(LoginRequiredMixin, CreateView):
 
 class IncomeUpdate(LoginRequiredMixin, UpdateView):
     model = Income
-    fields = ['name', 'category', 'amount']
+    fields = [ 'category', 'amount']
     success_url = '/income'
 
 class IncomeDelete(LoginRequiredMixin, DeleteView):

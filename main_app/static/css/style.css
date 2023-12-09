@@ -25,7 +25,12 @@ h4 {
 h1{
     font-family: 'BankGothic', sans-serif;
 }
-
+.income-body{
+    display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+}
 main {
     flex: 1 0 auto;
 }

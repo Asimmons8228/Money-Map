@@ -1,20 +1,24 @@
 {% extends 'base.html' %} {% block content %} {% if object %}
 <h1>Edit Expense</h1>
 {% else %}
-<h1>Add a Monthly Expense</h1>
+<h1 style="text-align: center;">Add a Monthly Expense</h1>
 {% endif %}
+<div class="form-container">
 <form action="" method="POST">
     {% csrf_token %}
     <!-- Render the inputs -->
     {{ form.as_p }}
+    <div style="text-align: center;">
     <input type="submit" value="Submit" class="btn" />
     {% if not object %}
     <br />
     <br />
     <a href="{% url 'income_create' %}" class="btn">Previous</a>
     <a href="{% url 'bills_create' %}" class="btn">Next: Monthly Bills</a>
+    </div>
     {% endif %}
 </form>
+</div>
 
 <script>
     const dateEl = document.getElementById("id_date");
