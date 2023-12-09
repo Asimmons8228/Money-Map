@@ -77,3 +77,34 @@ class IncomeUpdate(LoginRequiredMixin, UpdateView):
 class IncomeDelete(LoginRequiredMixin, DeleteView):
     model = Income
     success_url = '/income'
+
+class ExpenseCreate(LoginRequiredMixin, CreateView):
+    model = Expense
+    success_url = '/expenses/create'
+
+    class ExpenseCreateForm(forms.ModelForm):
+        EXPENSES = (
+            ('Essential', 'Essential'),
+            ('Nonessential', 'Nonessential'),
+        )
+
+        category = forms.ChoiceField(choices=EXPENSES)
+
+        class Meta:
+            model = Expense
+            fields = ['name', 'category', 'date', 'amount']
+
+    form_class = ExpenseCreateForm
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
+class ExpenseUpdate(LoginRequiredMixin, UpdateView):
+    model=Expense
+    fields= ['name', 'category', 'date', 'amount']
+    success_url = '/expenses'
+
+class ExpenseDelete(LoginRequiredMixin, DeleteView):
+    model=Expense
+    success_url = '/expenses'
