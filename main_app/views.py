@@ -139,3 +139,29 @@ class BillUpdate(LoginRequiredMixin, UpdateView):
 class BillDelete(LoginRequiredMixin, DeleteView):
     model = Bill
     success_url = '/bills'
+
+def signup(request):
+    error_message = ''
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.email = form.cleaned_data['email']
+            user.save()
+
+            profile, created = Profile.objects.get_or_create(user=user)
+
+            location = Location.objects.create(
+                state=form.cleaned_data['state']
+            )
+            profile.location = location
+            profile.save()
+
+            login(request, user)
+            return redirect('/')
+        else:
+            error_message = 'Invalid sign up - try again'
+
+    form = UserForm()
+    context = {'form': form, 'error_message': error_message}
+    return render(request, 'registration/signup.html', context)
