@@ -1,9 +1,8 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>Financial Health</h1>
+<h1 style="text-align: center;">Financial Health</h1>
 
-
-<div class="card">
+<div class="form-container">
     <div class="card-content">
         <table class="striped responsive-table">
             <tbody>
@@ -67,11 +66,11 @@
         </table>
     </div>
 </div>
-<div class="card">
+</br>
+<h1 style="text-align: center;">Recommendation Report</h1>
+<div class="form-container">
     <div class="card-content">
-        <span class="card-title">Recommendation Report</span>
-        <p><span style="font-size: 16px; font-weight: bold;">Nonessential Spending:</span> {{
-            nonessential_recommendation }}</p>
+        <p><span style="font-size: 16px; font-weight: bold;">Nonessential Spending:</span> {{ nonessential_recommendation }}</p>
         <p><span style="font-size: 16px; font-weight: bold;">Essential Spending:</span> {{ essential_recommendation }}
         </p>
         <p><span style="font-size: 16px; font-weight: bold;">Savings:</span> {{ savings_recommendation}}</p>

@@ -166,9 +166,9 @@ def get_recommendation(needs_score, nonessential_score, essential_score, savings
     recommendations = []
 
     if needs_score == 100:
-        recommendations.append("Congratulations! Your needs spending is well within budget.")
+        recommendations.append("Congratulations! Your needs spending is exemplary, well within budget, and reflects excellent financial management.")
     elif 95 <= needs_score < 100:
-        recommendations.append("Great job managing your needs spending.")
+        recommendations.append("Great job managing your needs spending. Continue practicing effective budgeting to maintain this impressive score.")
     elif 90 <= needs_score < 95:
         recommendations.append("Consider optimizing your needs spending. Look for cost-effective alternatives or discounts.")
     elif 85 <= needs_score < 90:
@@ -181,64 +181,64 @@ def get_recommendation(needs_score, nonessential_score, essential_score, savings
         recommendations.append("Your needs spending requires attention. Identify areas for reduction.")
     elif 65 <= needs_score < 70:
         recommendations.append("Consider substantial changes in managing your needs spending.")
-    elif 00 <= needs_score < 65:
+    elif 0 <= needs_score < 65:
         recommendations.append("Your needs spending is in a critical state. Immediate action is recommended.")
             
     if nonessential_score == 100:
-        recommendations.append("Great job! Your nonessential spending is well-controlled.")
-    elif 95 <= nonessential_score < 100:
-        recommendations.append("Continue managing your nonessential spending effectively.")
+        recommendations.append("Great job! Your nonessential spending is exceptionally well-controlled, demonstrating strong financial discipline.")
+    elif 95 <= nonessential_score <= 100:
+        recommendations.append("Continue managing your nonessential spending effectively to maintain this high score. Look for additional opportunities to optimize discretionary expenses.")
     elif 90 <= nonessential_score < 95:
-        recommendations.append("Review your nonessential spending for potential savings opportunities.")
+        recommendations.append("Review your nonessential spending for potential savings opportunities. Identify areas where discretionary expenses can be reduced without sacrificing lifestyle.")
     elif 85 <= nonessential_score < 90:
-        recommendations.append("Consider cutting back on nonessential expenses to improve your financial health.")
+        recommendations.append("Consider cutting back on nonessential expenses to improve your financial health. Evaluate nonessential spending patterns and find ways to enhance savings.")
     elif 80 <= nonessential_score < 85:
-        recommendations.append("Your nonessential spending may need some adjustments. Look for ways to reduce costs.")
+        recommendations.append("Your nonessential spending may need some adjustments. Look for ways to reduce costs without compromising quality of life.")
     elif 75 <= nonessential_score < 80:
-        recommendations.append("Significant improvements can be made in managing your nonessential spending.")
+        recommendations.append("Significant improvements can be made in managing your nonessential spending. Identify specific areas for reduction and implement changes accordingly.")
     elif 70 <= nonessential_score < 75:
-        recommendations.append("Your nonessential spending requires attention. Identify areas for reduction.")
+        recommendations.append("Your nonessential spending requires attention. Identify areas for reduction and focus on optimizing discretionary expenses.")
     elif 65 <= nonessential_score < 70:
-        recommendations.append("Consider substantial changes in managing your nonessential spending.")
+        recommendations.append("Consider substantial changes in managing your nonessential spending. Reevaluate your discretionary budget and explore strategies to bring it within a healthier range.")
     elif 0 <= nonessential_score < 65:
-        recommendations.append("Your nonessential spending is in a critical state. Immediate action is recommended.")
+        recommendations.append("Your nonessential spending is in a critical state. Immediate action is recommended to address and rectify challenges in discretionary spending.")
 
     if essential_score == 100:
-        recommendations.append("Excellent! Your essential spending is well within budget.")
+        recommendations.append("Congratulations! Your essential spending is exceptionally well within budget. Your effective management of necessary expenses contributes positively to your overall financial health.")
     elif 95 <= essential_score < 100:
-        recommendations.append("Great job managing your essential spending.")
+        recommendations.append("Great job managing your essential spending. Continue practicing effective budgeting to maintain this impressive score and explore additional opportunities for optimization.")
     elif 90 <= essential_score < 95:
-        recommendations.append("Consider optimizing your essential spending. Look for cost-effective alternatives or discounts.")
+        recommendations.append("Consider optimizing your essential spending. Look for cost-effective alternatives or discounts on crucial items to enhance your financial health without compromising necessities.")
     elif 85 <= essential_score < 90:
-        recommendations.append("Review your essential spending to identify areas for improvement.")
+        recommendations.append("Review your essential spending to identify areas for improvement. Seek opportunities to streamline costs while maintaining the quality of essential items.")
     elif 80 <= essential_score < 85:
-        recommendations.append("Your essential spending may need some adjustments. Look for ways to reduce costs.")
+        recommendations.append("Your essential spending may need some adjustments. Evaluate your expenses carefully and explore ways to optimize your necessary spending without sacrificing quality.")
     elif 75 <= essential_score < 80:
-        recommendations.append("Significant improvements can be made in managing your essential spending.")
+        recommendations.append("Significant improvements can be made in managing your essential spending. Identify specific areas for enhancement and implement changes to achieve a healthier balance.")
     elif 70 <= essential_score < 75:
-        recommendations.append("Your essential spending requires attention. Identify areas for reduction.")
+        recommendations.append("Your essential spending requires attention. Identify areas for reduction and focus on optimizing essential expenses to improve your overall financial well-being.")
     elif 65 <= essential_score < 70:
-        recommendations.append("Consider substantial changes in managing your essential spending.")
-    elif 00 <= essential_score < 65:
-        recommendations.append("Your essential spending is in a critical state. Immediate action is recommended.")
+        recommendations.append("Consider substantial changes in managing your essential spending. Reevaluate your budget and explore strategies to bring your necessary expenses within a healthier range.")
+    elif 0 <= essential_score < 65:
+        recommendations.append("Your essential spending is in a critical state. Immediate action is recommended to address and rectify challenges in managing necessary expenses. Seek financial advice if needed.")
 
     if savings_score == 100:
-        recommendations.append("Congratulations! Your savings are in excellent shape.")
+        recommendations.append("Congratulations! Your savings are in excellent shape, showcasing a strong commitment to building financial security.")
     elif 95 <= savings_score < 100:
-        recommendations.append("Great job managing your savings.")
+        recommendations.append("Great job managing your savings. Continue practicing effective saving habits and explore additional investment opportunities to further enhance your financial well-being.")
     elif 90 <= savings_score < 95:
-        recommendations.append("Consider optimizing your savings strategy. Explore additional investment opportunities.")
+        recommendations.append("Consider optimizing your savings strategy. Explore additional investment opportunities and review your savings plan to identify areas for improvemen")
     elif 85 <= savings_score < 90:
-        recommendations.append("Review your savings plan to identify areas for improvement.")
+        recommendations.append("Review your savings plan to identify areas for improvement. Consider adjustments to your savings strategy to ensure long-term financial stability.")
     elif 80 <= savings_score < 85:
-        recommendations.append("Your savings may need some adjustments. Explore ways to increase your savings rate.")
+        recommendations.append("Your savings may need some adjustments. Explore ways to increase your savings rate and consider diversifying your investment portfolio for greater financial resilience.")
     elif 75 <= savings_score < 80:
-        recommendations.append("Significant improvements can be made in managing your savings.")
+        recommendations.append("Significant improvements can be made in managing your savings. Identify specific areas for enhancement and implement changes to increase your financial cushion.")
     elif 70 <= savings_score < 75:
-        recommendations.append("Your savings require attention. Identify areas for enhancement.")
+        recommendations.append("Your savings require attention. Identify areas for enhancement and consider adjustments to your savings strategy for better financial health.")
     elif 65 <= savings_score < 70:
-        recommendations.append("Consider substantial changes in your savings strategy.")
+        recommendations.append("Consider substantial changes in your savings strategy. Reevaluate your savings goals and explore ways to increase your savings rate for improved financial stability.")
     elif 0 <= savings_score < 65:
-        recommendations.append("Your savings are in a critical state. Immediate action is recommended.")
+        recommendations.append("Your savings are in a critical state. Immediate action is recommended to address and rectify challenges in managing and growing your savings. Seek further financial advice if needed")
 
     return recommendations
