@@ -19,13 +19,12 @@
             <div class="nav-wrapper">
                 <ul>
                     <li>
-                        <a href="/" class="left brand-logo"><img
+                        <a href="/" class="left brand-logo" id="brand-logo"><img
                                 src="{% static 'images/gold_logo_transparent_background.png' %}" alt="Brand Logo"
                                 class="moneymap-logo" /></a>
                     </li>
                 </ul>
-                <ul class="right">
-                    <li><a href="{% url 'about' %}">About Us</a></li>
+                <ul class="right" id="nav-items">
                     {% if user.is_authenticated %}
                     <li>
                         <a href="{% url 'fincalc_index' %}">Financial Health Calculator</a>

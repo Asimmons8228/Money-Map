@@ -4,7 +4,7 @@
 
 <div class="form-container">
     <div class="card-content">
-        <table class="striped responsive-table">
+        <table class="striped">
             <tbody>
                 <tr>
                     <td>User</td>
@@ -70,10 +70,9 @@
 <h1 style="text-align: center;">Recommendation Report</h1>
 <div class="form-container">
     <div class="card-content">
-        <p><span style="font-size: 16px; font-weight: bold;">Nonessential Spending:</span> {{ nonessential_recommendation }}</p>
-        <p><span style="font-size: 16px; font-weight: bold;">Essential Spending:</span> {{ essential_recommendation }}
-        </p>
-        <p><span style="font-size: 16px; font-weight: bold;">Savings:</span> {{ savings_recommendation}}</p>
+        <p class="recommendations"><span style="font-weight: bold;font-size: x-large;">Nonessential Spending:  </span> {{ nonessential_recommendation }}</p>
+        <p class="recommendations"><span style="font-weight: bold;font-size: x-large;">Essential Spending:  </span> {{ essential_recommendation }}</p>
+        <p class="recommendations"><span style="font-weight: bold;font-size: x-large;">Savings:  </span> {{ savings_recommendation}}</p>
     </div>
 </div>
 <br />
