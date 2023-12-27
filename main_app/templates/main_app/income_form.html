@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block content %}
+{% if object %}
+<h1>Edit Yearly Income</h1>
+{% else %}
+<h1 style="text-align: center;">Add Yearly Income</h1>
+{% endif %}
+
+<div class="form-container">
+    <form action="" method="POST">
+        <!-- Django requires the following for security purposes -->
+        {% csrf_token %}
+        <table>
+            <!-- Render the inputs inside of <tr>s & <td>s -->
+            {{ form.as_p }}
+        </table>
+        <div style="text-align: center;">
+            <input type="submit" value="Submit" class="btn" />
+
+            {% if not object %}
+            <br />
+            <br />
+            <a href="{% url 'expenses_create' %}" class="btn">Next</a>
+        </div>
+        {% endif %}
+    </form>
+</div>
+</div>
+<script>
+    const selectEl = document.getElementById("id_category");
+    M.FormSelect.init(selectEl);
+</script>
+{% endblock %}

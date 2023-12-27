@@ -1,0 +1,79 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1 style="text-align: center;">Financial Health</h1>
+
+<div class="form-container">
+    <div class="card-content">
+        <table class="striped">
+            <tbody>
+                <tr>
+                    <td>User</td>
+                    <td>{{full_name}}</td>
+                </tr>
+                <tr>
+                    <td>Yearly Income</td>
+                    <td>${{ yearly_income }}</td>
+                </tr>
+                <tr>
+                    <td>Monthly Income</td>
+                    <td>${{ rounded_monthly_income }}</td>
+                </tr>
+                <tr>
+                    <td>Yearly Expenses</td>
+                    <td>${{ yearly_estimated_expenses }}</td>
+                </tr>
+                <tr>
+                    <td>Monthly Expenses</td>
+                    <td>${{ total_expenses }}</td>
+                </tr>
+                <tr>
+                    <td>Yearly Bills</td>
+                    <td>${{ yearly_bills }}</td>
+                </tr>
+                <tr>
+                    <td>Monthly Bills</td>
+                    <td>${{ monthly_bills }}</td>
+                </tr>
+                <tr>
+                    <td>Essential Spending (Yearly)</td>
+                    <td>${{ essential_spending }}</td>
+                </tr>
+                <tr>
+                    <td>Nonessential Spending (Yearly)</td>
+                    <td>${{ non_essential_spending }}</td>
+                </tr>
+                <tr>
+                    <td>Yearly Savings</td>
+                    <td>${{ savings }}</td>
+                </tr>
+                <tr>
+                    <td>Nonessential Spending Score</td>
+                    <td>{{ nonessential_score }}</td>
+                </tr>
+                <tr>
+                    <td>Essential Spending Score</td>
+                    <td>{{ essential_score }}</td>
+                </tr>
+                <tr>
+                    <td>Savings Score</td>
+                    <td>{{ savings_score }}</td>
+                </tr>
+                <tr>
+                    <td>Financial Health Grade</td>
+                    <td>{{ financial_health_grade}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</br>
+<h1 style="text-align: center;">Recommendation Report</h1>
+<div class="form-container">
+    <div class="card-content">
+    <p class="recommendations"><span style="font-weight: bold;font-size: x-large;">Nonessential Spending: </span> {{nonessential_recommendation}}</p>
+    <p class="recommendations"><span style="font-weight: bold;font-size: x-large;">Essential Spending: </span> {{essential_recommendation}}</p>
+    <p class="recommendations"><span style="font-weight: bold;font-size: x-large;">Savings: </span>{{savings_recommendation}}</p>
+    </div>
+</div>
+<br />
+{% endblock %}

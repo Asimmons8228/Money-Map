@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>MoneyMap</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css" />
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+    <header class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <ul>
+                    <li>
+                        <a href="/" class="left brand-logo" id="brand-logo"><img
+                                src="{% static 'images/gold_logo_transparent_background.png' %}" alt="Brand Logo"
+                                class="moneymap-logo" /></a>
+                    </li>
+                </ul>
+                <ul class="right" id="nav-items">
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'fincalc_index' %}">Financial Health Calculator</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-trigger" href="#" data-target="dropdown1"> Finances </a>
+                    </li>
+                    <ul id="dropdown1" class="dropdown-content">
+                        <li>
+                            <a href="{% url 'finhealth_index' %}">Financial Health</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="{% url 'income_index' %}">Income Report</a></li>
+                        <li class="divider"></li>
+                        <li><a href="{% url 'expenses_index' %}">Expense Report</a></li>
+                        <li class="divider"></li>
+                        <li><a href="{% url 'bills_index' %}">Bill Report</a></li>
+                    </ul>
+                    <li><a href="{% url 'logout' %}">Log Out</a></li>
+                    {% else %}
+                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                    <li><a href="{% url 'login' %}">Log In</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container">{% block content %} {% endblock %}</main>
+    <footer class="page-footer">
+        <div id="footer-text" class="right">All Rights Reserved, &copy; 2023 MoneyMap &nbsp;</div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var elems = document.querySelectorAll(".dropdown-trigger");
+            var instances = M.Dropdown.init(elems, {
+                hover: false,
+                coverTrigger: false,
+                closeOnClick: true,
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Bill Report</h1>
+<div class="card">
+    <div class="card-content">
+        <span class="card-title">Summary</span>
+        <p>Total Monthly Bills: ${{ monthly_bills }}</p>
+        <p>Total Yearly Bills: ${{ yearly_bills }}</p>
+    </div>
+    <div class="card-action">
+        <a href="{% url 'bills_create' %}" class="btn">Add a Bill</a>
+    </div>
+</div>
+<br />
+<hr />
+<br />
+
+{% for bill in bills %}
+<div class="card">
+    <div class="card-content">
+        <span class="card-title">{{ bill.name }}</span>
+        <p>Category: {{ bill.category }}</p>
+        <p>Amount: ${{ bill.amount }}</p>
+    </div>
+    <div class="card-action">
+        <form action="{% url 'bills_delete' bill.id %}" method="POST">
+            {% csrf_token %}
+            <a href="{% url 'bills_update' bill.id %}" class="btn">Edit</a>
+            <input type="submit" value="Delete" class="btn" />
+        </form>
+    </div>
+</div>
+{% endfor %} {% endblock %}
